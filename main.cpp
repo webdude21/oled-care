@@ -4,16 +4,12 @@
 int main()
 {
     Sleep(5000); // sleep for 5 seconds to allow user to select the window to move
-
-    int iteration = 0;
     RECT rs, rd;
     HWND hw;
     HWND hwnd;
 
     for (hwnd = GetTopWindow(NULL); hwnd != NULL; hwnd = GetNextWindow(hwnd, GW_HWNDNEXT))
     {
-        iteration++;
-
         if (!IsWindowVisible(hwnd) || GetWindowTextLength(hwnd) == 0)
         {
             continue;
